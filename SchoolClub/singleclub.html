@@ -6,9 +6,26 @@
 <link type="text/css" href="style/singleclub.css" rel="stylesheet" />
 	<link type="text/css" href="style/head1.css" rel="stylesheet"/>
 	<link type="text/css" href="style/lianxiwomen.css" rel="stylesheet"/>
+	<link type="text/css" href="style/confirmJoin.css" rel="stylesheet"/>
 <script src="js/jquery-1.8.3.js" type="text/javascript"></script>
+	<script src="js/simpleAlert.js" type="text/javascript"></script>
 	<script src="js/reply.js" type="text/javascript"></script>
 	<script>
+		$(function () {
+			//确认弹出框
+			$(".join").click(function () {
+				var onlyChoseAlert = simpleAlert({
+					"content": "确认参加<i>音乐社</i>吗？",
+					"buttons": {
+						"确定": function () {
+							onlyChoseAlert.close();
+						}
+					}
+				})
+				$(this).html("审核中");
+				$(this).css('background','#CCCCCC');
+			})
+		});
 		$(document).ready(function (){
 			menu();
 			pictureRoll();
@@ -100,8 +117,7 @@
 		</div>
 	</div>
 	<div class="text">
-		<span class="follow">关注</span><br>
-		<span class="push">点赞</span><br>
+		<span class="follow"><i></i>关注</span>
 		<span class="join">申请加入</span>
 	</div>
 </div>

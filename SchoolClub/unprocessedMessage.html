@@ -5,6 +5,29 @@
     <title>unprocessedMessage</title>
     <link rel="stylesheet" type="text/css" href="style/unprocessedMessage.css" />
     <link rel="stylesheet" type="text/css" href="style/lianxiwomen.css" />
+    <link rel="stylesheet" type="text/css" href="style/simpleAlert.css" />
+    <script src="js/simpleAlert.js"></script>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script>
+        $(function () {
+            //单次单选弹框
+            $(".userName").click(function () {
+                var onlyChoseAlert = simpleAlert({
+                    "content": "<li><span>姓  名</span><span>李佳琪</span></li>" +
+                    "<li><span>性  别</span><span>女</span></li>" +
+                    "<li><span>手  机</span><span>15179190283</span></li>"+
+                    "<li><span>邮  箱</span><span>630980865@qq.com</span></li>"+
+                    "<li><span>学  校</span><span>江西师范大学</span></li>"+
+                    "<li><span>学  院</span><span>软件学院</span></li>",
+                    "buttons":{
+                        "确定":function () {
+                            onlyChoseAlert.close();
+                        }
+                    }
+                })
+            })
+        })
+    </script>
 </head>
 <body>
 <div id="header1">

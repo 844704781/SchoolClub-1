@@ -5,12 +5,28 @@
 <title>singleActivity</title>
 <link type="text/css" href="style/singleActivity.css" rel="stylesheet" />
 	<link type="text/css" href="style/head1.css" rel="stylesheet" />
+	<link type="text/css" href="style/confirmJoin.css" rel="stylesheet" />
 	<link type="text/css" href="style/lianxiwomen.css" rel="stylesheet" />
 <script src="js/jquery-1.8.3.js" language="javascript" type="text/javascript"></script>
 	<script src="js/reply.js" language="javascript" type="text/javascript"></script>
+	<script src="js/simpleAlert.js" language="javascript" type="text/javascript"></script>
 <script src="js/jQuery-jcLightBox.js" language="javascript" type="text/javascript"></script><!--图片点击放大-->
 <script type="text/javascript">
+	$(function () {
+		//确认弹出框
+		$(".join").click(function () {
+			var onlyChoseAlert = simpleAlert({
+				"content": "确认参加<i>一起来玩狼人杀吗</i>吗？",
+				"buttons": {
+					"确定": function () {
+						onlyChoseAlert.close();
+					}
+				}
+			})
+		})
+	});
 	<!-- 菜单 -->
+
 	$(document).ready(function (){
 		menu();
 		pictureBox();
